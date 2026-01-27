@@ -103,38 +103,38 @@ function Navbar() {
     z-50 md:hidden
     bg-white/90 backdrop-blur-md
     shadow-lg border border-gray-200
-    rounded-full px-6 py-3
+    rounded-full + px-10 py-5
     flex items-center gap-8
   "
 >
   {/* Home */}
   <a href="#top" className="relative group flex flex-col items-center">
     <div className="speech">Home</div>
-    <Image src={assets.home} alt="home" className="w-6" />
+    <Image src={assets.home} alt="home" className="w-8 h-8" />
   </a>
 
   {/* About */}
   <a href="#about" className="relative group flex flex-col items-center">
     <div className="speech">About</div>
-    <Image src={assets.user_image} alt="about" className="w-6" />
+    <Image src={assets.user_image} alt="about" className="w-6 h-8" />
   </a>
 
   {/* Courses */}
   <a href="#services" className="relative group flex flex-col items-center">
     <div className="speech">Courses</div>
-    <Image src={assets.edu_icon} alt="courses" className="w-6" />
+    <Image src={assets.edu_icon} alt="courses" className="w-6 h-8" />
   </a>
 
   {/* Instructor */}
   <a href="#work" className="relative group flex flex-col items-center">
     <div className="speech">Instructor</div>
-    <Image src={assets.code_icon} alt="instructor" className="w-6" />
+    <Image src={assets.code_icon} alt="instructor" className="w-6 h-8" />
   </a>
 
   {/* Contact */}
   <a href="#contact" className="relative group flex flex-col items-center">
     <div className="speech">Contact</div>
-    <Image src={assets.whatsapp} alt="contact" className="w-6" />
+    <Image src={assets.whatsapp} alt="contact" className="w-6 h-8" />
   </a>
 </nav>
 
