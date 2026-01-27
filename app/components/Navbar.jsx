@@ -1,6 +1,6 @@
 import { assets } from '@/assets/assets'
 import Image from "next/image";
-
+import AnimatedHomeIcon from "@/app/components/AnimatedHomeIcon";
 function Navbar() {
   return (
     <>
@@ -14,13 +14,15 @@ function Navbar() {
         />
       </div>
 
-      {/* ================= DESKTOP NAVBAR ================= */}
+      {/* ================= TOP NAVBAR ================= */}
       <nav
-        className="fixed top-0 z-50 w-full
-        px-5 lg:px-8 xl:px-[8%] py-1
-        flex items-center justify-between"
+        className="
+          fixed top-0 z-50 w-full
+          px-5 lg:px-8 xl:px-[8%] py-1
+          flex items-center justify-between
+        "
       >
-        {/* Logo */}
+        {/* Logo (LEFT) */}
         <a href="#top">
           <Image
             src={assets.logo}
@@ -30,7 +32,16 @@ function Navbar() {
           />
         </a>
 
-        {/* Center Menu (Desktop only) */}
+        {/* 🌙 Moon icon (MOBILE ONLY, RIGHT SIDE) */}
+        <button className="block md:hidden">
+          <Image
+            src={assets.moon_icon}
+            alt="theme"
+            className="w-6"
+          />
+        </button>
+
+        {/* Center Menu (DESKTOP ONLY) */}
         <ul
           className="
             hidden md:flex items-center gap-1 lg:gap-2
@@ -70,10 +81,15 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Right Side (Desktop only) */}
+        {/* Right Side (DESKTOP ONLY) */}
         <div className="hidden md:flex items-center gap-4">
+          {/* 🌙 Moon icon for DESKTOP */}
           <button>
-            <Image src={assets.moon_icon} alt="" className="w-6" />
+            <Image
+              src={assets.moon_icon}
+              alt="theme"
+              className="w-6"
+            />
           </button>
 
           <a
@@ -97,70 +113,38 @@ function Navbar() {
           </a>
         </div>
       </nav>
-     {/* ================= MOBILE LIQUID BOTTOM NAVBAR ================= */}
-<div className="fixed bottom-5 left-0 right-0 z-50 md:hidden flex justify-center">
-  <nav
-    className="
-      liquid-bar
-      flex items-center gap-10
-      px-10 py-5
-      rounded-full
-    "
-  >
-    {/* Home */}
-    <a href="#top" className="relative group liquid-item">
-      <div className="liquid-pop">Home</div>
-      <img
-        src={assets.web_icon.src}
-        alt="Home"
-        className="w-8 h-8"
-      />
-    </a>
 
-    {/* About */}
-    <a href="#about" className="relative group liquid-item">
-      <div className="liquid-pop">About</div>
-      <img
-        src={assets.user_image.src}
-        alt="About"
-        className="w-8 h-8"
-      />
-    </a>
+      {/* ================= MOBILE LIQUID BOTTOM NAVBAR ================= */}
+      <div className="fixed bottom-5 left-0 right-0 z-50 md:hidden flex justify-center">
+        <nav className="liquid-bar flex items-center gap-10 px-10 py-5 rounded-full">
 
-    {/* Courses */}
-    <a href="#services" className="relative group liquid-item">
-      <div className="liquid-pop">Courses</div>
-      <img
-        src={assets.edu_icon.src}
-        alt="Courses"
-        className="w-8 h-8"
-      />
-    </a>
+         <a href="#top" className="relative group liquid-item">
+  <div className="liquid-pop">Home</div>
+  <AnimatedHomeIcon  src="/lottie/home.json"/>
+</a>
+          <a href="#about" className="relative group liquid-item">
+            <div className="liquid-pop">About</div>
+         <AnimatedHomeIcon  src="/lottie/aboutUs.json"/>
+          </a>
 
-    {/* Instructor */}
-    <a href="#work" className="relative group liquid-item">
-      <div className="liquid-pop">Instructor</div>
-      <img
-        src={assets.code_icon.src}
-        alt="Instructor"
-        className="w-8 h-8"
-      />
-    </a>
+          <a href="#services" className="relative group liquid-item">
+            <div className="liquid-pop">Courses</div>
+         
+               <AnimatedHomeIcon  src="/lottie/courses.json"/>
+          </a>
 
-    {/* Contact */}
-    <a href="#contact" className="relative group liquid-item">
-      <div className="liquid-pop">Contact</div>
-      <img
-        src={assets.whatsapp.src}
-        alt="Contact"
-        className="w-8 h-8"
-      />
-    </a>
-  </nav>
-</div>
+          <a href="#work" className="relative group liquid-item">
+            <div className="liquid-pop">Instructor</div>
+            <img src={assets.code_icon.src} className="w-8 h-8" />
+          </a>
 
+          <a href="#contact" className="relative group liquid-item">
+            <div className="liquid-pop">Contact</div>
+            <img src={assets.whatsapp.src} className="w-8 h-8" />
+          </a>
 
-
+        </nav>
+      </div>
     </>
   )
 }

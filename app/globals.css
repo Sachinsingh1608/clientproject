@@ -126,3 +126,8 @@ body {
 .liquid-item img {
   display: block;
 }
+.liquid-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
