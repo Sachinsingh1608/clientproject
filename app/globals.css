@@ -52,7 +52,46 @@ body {
   }
 }
 
-.temp-gradient {
-  background-size: 200% 200%;
-  animation: tempFlow 10s ease-in-out infinite;
+.speech {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+
+  background: #f2f2f2;
+  color: #222;
+  font-size: 13px;
+  font-weight: 500;
+
+  padding: 6px 14px;
+  border-radius: 9999px;
+
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.22s ease;
+}
+
+/* Rounded tail (Spotify style) */
+.speech::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #f2f2f2;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* show on hover / tap */
+.group:hover .speech {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
