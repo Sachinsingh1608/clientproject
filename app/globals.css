@@ -2,19 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ================= BASE FONTS ================= */
 body {
   font-family: var(--font-outfit), sans-serif;
 }
 
-/* Example usage */
+/* Optional heading font */
 .heading {
   font-family: var(--font-ovo), serif;
 }
 
-*{
-  font-family: Outfit;
-}
-
+/* ================= DESKTOP NAV HOVER EFFECT ================= */
 .nav-hover {
   position: relative;
   overflow: hidden;
@@ -36,62 +35,94 @@ body {
   transform: scaleX(1);
 }
 
-/* Dark mode */
+/* Dark mode hover */
 .dark .nav-hover::after {
   background: rgba(255, 255, 255, 0.12);
 }
+
+/* ================= TEMP GRADIENT ANIMATION ================= */
 @keyframes tempFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.speech {
-  position: absolute;
-  bottom: 140%;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
+/* ================= iOS STYLE LIQUID BOTTOM BAR ================= */
+.liquid-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.35)
+  );
 
-  background: #f2f2f2;
-  color: #222;
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.2);
+
+  /* Safari + zoom safety */
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+}
+
+/* ================= LIQUID POPUP (SPEECH) ================= */
+.liquid-pop {
+  position: absolute;
+  bottom: 145%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.75)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding: 6px 16px;
   font-size: 13px;
   font-weight: 500;
+  color: #111;
 
-  padding: 6px 14px;
   border-radius: 9999px;
-
-  box-shadow: 
-    0 6px 16px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-
   white-space: nowrap;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
   opacity: 0;
   pointer-events: none;
-  transition: all 0.22s ease;
+  transition: all 0.25s cubic-bezier(.4, 0, .2, 1);
 }
 
-/* Rounded tail (Spotify style) */
-.speech::after {
+/* Tail of the popup */
+.liquid-pop::after {
   content: "";
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  background: #f2f2f2;
+  width: 12px;
+  height: 12px;
+  background: inherit;
   border-radius: 0 0 50% 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 
-/* show on hover / tap */
-.group:hover .speech {
+/* Show popup on hover / tap */
+.group:hover .liquid-pop {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* ================= IMAGE SAFETY ================= */
+.liquid-item img {
+  display: block;
 }

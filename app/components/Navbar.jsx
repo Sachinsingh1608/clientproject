@@ -97,46 +97,68 @@ function Navbar() {
           </a>
         </div>
       </nav>
-      <nav
-  className="
-    fixed bottom-4 left-1/2 -translate-x-1/2
-    z-50 md:hidden
-    bg-white/90 backdrop-blur-md
-    shadow-lg border border-gray-200
-    rounded-full + px-10 py-5
-    flex items-center gap-8
-  "
->
-  {/* Home */}
-  <a href="#top" className="relative group flex flex-col items-center">
-    <div className="speech">Home</div>
-    <Image src={assets.home} alt="home" className="w-8 h-8" />
-  </a>
+     {/* ================= MOBILE LIQUID BOTTOM NAVBAR ================= */}
+<div className="fixed bottom-5 left-0 right-0 z-50 md:hidden flex justify-center">
+  <nav
+    className="
+      liquid-bar
+      flex items-center gap-10
+      px-10 py-5
+      rounded-full
+    "
+  >
+    {/* Home */}
+    <a href="#top" className="relative group liquid-item">
+      <div className="liquid-pop">Home</div>
+      <img
+        src={assets.web_icon.src}
+        alt="Home"
+        className="w-8 h-8"
+      />
+    </a>
 
-  {/* About */}
-  <a href="#about" className="relative group flex flex-col items-center">
-    <div className="speech">About</div>
-    <Image src={assets.user_image} alt="about" className="w-6 h-8" />
-  </a>
+    {/* About */}
+    <a href="#about" className="relative group liquid-item">
+      <div className="liquid-pop">About</div>
+      <img
+        src={assets.user_image.src}
+        alt="About"
+        className="w-8 h-8"
+      />
+    </a>
 
-  {/* Courses */}
-  <a href="#services" className="relative group flex flex-col items-center">
-    <div className="speech">Courses</div>
-    <Image src={assets.edu_icon} alt="courses" className="w-6 h-8" />
-  </a>
+    {/* Courses */}
+    <a href="#services" className="relative group liquid-item">
+      <div className="liquid-pop">Courses</div>
+      <img
+        src={assets.edu_icon.src}
+        alt="Courses"
+        className="w-8 h-8"
+      />
+    </a>
 
-  {/* Instructor */}
-  <a href="#work" className="relative group flex flex-col items-center">
-    <div className="speech">Instructor</div>
-    <Image src={assets.code_icon} alt="instructor" className="w-6 h-8" />
-  </a>
+    {/* Instructor */}
+    <a href="#work" className="relative group liquid-item">
+      <div className="liquid-pop">Instructor</div>
+      <img
+        src={assets.code_icon.src}
+        alt="Instructor"
+        className="w-8 h-8"
+      />
+    </a>
 
-  {/* Contact */}
-  <a href="#contact" className="relative group flex flex-col items-center">
-    <div className="speech">Contact</div>
-    <Image src={assets.whatsapp} alt="contact" className="w-6 h-8" />
-  </a>
-</nav>
+    {/* Contact */}
+    <a href="#contact" className="relative group liquid-item">
+      <div className="liquid-pop">Contact</div>
+      <img
+        src={assets.whatsapp.src}
+        alt="Contact"
+        className="w-8 h-8"
+      />
+    </a>
+  </nav>
+</div>
+
 
 
     </>
