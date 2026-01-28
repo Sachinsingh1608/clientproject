@@ -1,6 +1,7 @@
-import { assets } from '@/assets/assets'
+import { assets } from "../../assets/assets";
+
 import Image from "next/image";
-import AnimatedHomeIcon from "@/app/components/AnimatedHomeIcon";
+
 function Navbar() {
   return (
     <>
@@ -9,8 +10,8 @@ function Navbar() {
         <Image
           src={assets.header_bg_color}
           alt=""
-          className="w-full"
-          priority
+          className="w-full h-full"
+         
         />
       </div>
 
@@ -115,36 +116,7 @@ function Navbar() {
       </nav>
 
       {/* ================= MOBILE LIQUID BOTTOM NAVBAR ================= */}
-      <div className="fixed bottom-5 left-0 right-0 z-50 md:hidden flex justify-center">
-        <nav className="liquid-bar flex items-center gap-10 px-10 py-5 rounded-full">
-
-         <a href="#top" className="relative group liquid-item">
-  <div className="liquid-pop">Home</div>
-  <AnimatedHomeIcon  src="/lottie/home.json"/>
-</a>
-          <a href="#about" className="relative group liquid-item">
-            <div className="liquid-pop">About</div>
-         <AnimatedHomeIcon  src="/lottie/aboutUs.json"/>
-          </a>
-
-          <a href="#services" className="relative group liquid-item">
-            <div className="liquid-pop">Courses</div>
-         
-               <AnimatedHomeIcon  src="/lottie/courses.json"/>
-          </a>
-
-          <a href="#work" className="relative group liquid-item">
-            <div className="liquid-pop">Instructor</div>
-            <img src={assets.code_icon.src} className="w-8 h-8" />
-          </a>
-
-          <a href="#contact" className="relative group liquid-item">
-            <div className="liquid-pop">Contact</div>
-            <img src={assets.whatsapp.src} className="w-8 h-8" />
-          </a>
-
-        </nav>
-      </div>
+      
     </>
   )
 }

@@ -1,11 +1,21 @@
-'use client';
-import Navbar from "./components/Navbar";
+"use client";
 
+import AboutMe from "./components/AboutMe";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
-    <Navbar/>
+     <Navbar />
+
+     
+      
+   <AboutMe/>
+
+      {/* Courses */}
+
+       
+     
     </>
   );
 }
